@@ -91,7 +91,6 @@ class Dog
       SELECT id, name, breed
       FROM dogs
       WHERE name = ?
-      LIMIT 1
     SQL
 
     found = DB[:conn].execute(sql, name)
