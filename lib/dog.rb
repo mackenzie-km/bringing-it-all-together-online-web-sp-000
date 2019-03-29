@@ -94,7 +94,7 @@ class Dog
       LIMIT 1
     SQL
 
-    found = DB[:conn].execute(sql, id)
+    found = DB[:conn].execute(sql, name)
     found.map do |dog|
       self.new_from_db(dog)
     end.first
