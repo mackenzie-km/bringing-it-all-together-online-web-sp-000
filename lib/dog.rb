@@ -69,11 +69,10 @@ class Dog
 
     found = DB[:conn].execute(sql, name, breed)
 
-    id = found[0][0]
-    name = found[0][1]
-    breed = found[0][2]
-
-    if id
+    if !found.empty?
+      id = found[0][0]
+      name = found[0][1]
+      breed = found[0][2]
       self.new(id: id, name: name, breed: breed)
     else
       self.create(name: name, breed: breed)
