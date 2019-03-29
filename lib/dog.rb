@@ -73,7 +73,11 @@ class Dog
     name = found[0][1]
     breed = found[0][2]
 
-    self.create(name: name, breed: breed)
+    if id 
+      self.new(id, name, breed)
+    else 
+      self.create(name: name, breed: breed)
+    end 
   end
 
 end
