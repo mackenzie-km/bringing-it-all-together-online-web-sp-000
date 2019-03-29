@@ -86,4 +86,18 @@ class Dog
     self.new(id: id, name: name, breed: breed)
   end
 
+  def self.find_by_name(name)
+    sql = <<-SQL
+      SELECT id, name, breed
+      FROM dogs
+      WHERE name = ?
+      LIMIT 1
+    SQL
+
+    found = DB[:conn].execute(sql, id)
+    found.map do |dog|
+      self.new_from_db(dog)
+    end.first 
+  end 
+
 end
