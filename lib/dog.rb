@@ -97,7 +97,7 @@ class Dog
     found = DB[:conn].execute(sql, name)
     found.map do |dog|
       self.new_from_db(dog)
-    end.first
+    end
   end
 
 end
