@@ -74,7 +74,7 @@ class Dog
     breed = found[0][2]
 
     if id
-      self.new(id, name, breed)
+      self.new(id: id, name: name, breed: breed)
     else
       self.create(name: name, breed: breed)
     end
