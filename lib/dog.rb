@@ -67,7 +67,7 @@ class Dog
       WHERE name = ?, breed = ?
     SQL
 
-    found = DB[:conn].execute(sql, name:, breed:)
+    found = DB[:conn].execute(sql, name, breed)
     id = found[0][0]
     name = found[0][1]
     breed = found[0][2]
